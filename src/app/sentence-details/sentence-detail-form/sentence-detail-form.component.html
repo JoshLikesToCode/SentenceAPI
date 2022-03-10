@@ -1,0 +1,21 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="sentenceDetailId"
+    [value] ="service.formData.SentenceDetailId" />
+    <div class="form-group">
+        <label>Sentence</label>
+        <input class="form-control form-control-lg" placeholder="Enter Sentence" name="sentence" #sentence="ngModel" [(ngModel)] = "service.formData.sentence" minLength="1" required [class.invalid]="sentence.invalid && sentence.touched"> 
+    </div>
+    <div class="form-group">
+        <label>Pattern</label>
+        <input class="form-control form-control-lg" placeholder="Enter Pattern" name="pattern" #pattern="ngModel"
+            [(ngModel)]="service.formData.pattern" minlength="1" required [class.invalid]="pattern.invalid && pattern.touched">
+    </div>
+    <div class="form-group">
+        <label>Case Insensitive</label>
+        <input class="form-control form-control-lg" placeholder="Y / N" name="caseinsensitive" #caseinsensitive="ngModel"
+            [(ngModel)]="service.formData.caseinsensitive" minlength="1">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+<div class="jumbtron py-3">
+    <h1 class="display-4 text-center">Sentence Pattern Matcher</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-sentence-detail-form></app-sentence-detail-form>
+    </div>
+    <div class="col-md-6">
+        <span>List of Entries</span>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Sentence</th>
+                    <th>Pattern</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sd of service.list">
+                    <td (click)="populateForm(sd)">{{sd.sentence}}</td>
+                    <td (click)="populateForm(sd)">{{sd.pattern}}</td>
+                    <td (click)="populateForm(sd)">{{sd.result}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
